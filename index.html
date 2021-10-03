@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body{
+			background-color: black;
+			margin: auto;
+		}
+		video{
+			display: block; 
+			margin: auto;
+		}
+		label{
+			display: block; 
+			margin:auto; 
+			text-align: center; 
+			color: white; 
+			font-size: 500%;
+		}
+		input{
+			display: block; 
+			margin-left: auto; 
+			margin-right: auto;
+			font-size: 400%;
+			text-align: center;
+		}
+		button{
+			display: block; 
+			margin-left: auto; 
+			margin-right: auto;
+			size: 400%;
+			font-size: 400%;
+		}
+		span{
+			display: block; 
+			margin:auto; 
+			text-align: center; 
+			color: white;
+			size: 400%;
+			font-size: 400%;
+		}
+
+	</style>
+<title>Page Title</title>
+</head>
+<body>
+  <video id="video1" width="100%" controls>
+    <source src="PinPad Small h264.mp4" type="video/mp4">
+    Your browser does not support HTML video.
+  </video><br>
+  <label for="answer_label"><b>Answer</b></label><br>
+  <input type="text" id="answer" name="answer" size="3" maxlength="3"><br>
+  <button onclick="verifyAnswer()">Verify</button><br>
+  <span id="verifySpan"></span>
+
+<script>
+	var answerText = document.getElementById("answer");
+	var verifyText = document.getElementById("verifySpan");
+
+	function verifyAnswer()
+	{
+		if(answerText.value == 143)
+		{
+			console.log("Success");
+			verifySpan.innerHTML = "Correct Answer";
+			verifySpan.style.setProperty("color", "lightgreen");
+		}
+		else
+		{
+			console.log("Incorrect");
+			verifySpan.innerHTML = "Wrong Answer";
+			verifySpan.style.setProperty("color", "red");
+		}
+	}
+</script>
+
+</body>
+</html>
